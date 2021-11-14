@@ -16,10 +16,10 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bartex.joblesson2.R
 import com.bartex.joblesson2.entity.Constants
+import com.bartex.joblesson2.entity.films.FilmSealed
 import com.bartex.joblesson2.entity.films.Films
 import com.bartex.joblesson2.entity.films.FilmsFromNet
 import com.bartex.joblesson2.fragments.adapters.FilmsRVAdapter
@@ -59,7 +59,6 @@ class FilmsFragment : Fragment() {
 
         //восстанавливаем номер страницы после поворота
         page = filmsViewModel.getPage()
-        Log.d(TAG, "***FilmsFragment onViewCreated page = $page")
 
         filmsViewModel. loadFilmsSealed(page) //загружаем данные
         filmsViewModel.getFilmsSealed().observe(viewLifecycleOwner, Observer { filmSealed->
@@ -76,7 +75,6 @@ class FilmsFragment : Fragment() {
         val firstPosition = manager.findFirstVisibleItemPosition()
         filmsViewModel.savePosition(firstPosition)
         filmsViewModel.savePage(page) // запоминаем страницу на случай поворота
-        Log.d(TAG, "FilmsFragment onPause firstPosition = $firstPosition")
     }
 
     private fun initButtonListener() {
@@ -110,7 +108,6 @@ class FilmsFragment : Fragment() {
                 renderLoadingStart()
             }
         }
-
     }
 
     private fun renderLoadingStart() {
@@ -147,7 +144,6 @@ class FilmsFragment : Fragment() {
         listOfFilms?. let{
             adapter.listOfFilms = it
             rvFilms.layoutManager?.scrollToPosition(position) //крутим в запомненную позицию списка
-            Log.d(TAG, "FilmsFragment renderData scrollToPosition = $position")
         }
     }
 
@@ -181,8 +177,4 @@ class FilmsFragment : Fragment() {
                 navController.navigate(R.id.DetailsOfFilmFragment, bundle)
             }
         }
-
-    companion object {
-        const val TAG = "33333"
-    }
 }

@@ -1,4 +1,4 @@
-package com.bartex.joblesson2.fragments.films
+package com.bartex.joblesson2.api
 
 import com.bartex.joblesson2.entity.details.DetailsFromNet
 import com.bartex.joblesson2.entity.films.FilmsFromNet

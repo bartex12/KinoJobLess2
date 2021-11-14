@@ -1,6 +1,4 @@
-package com.bartex.joblesson2.fragments.details
-
-import com.bartex.joblesson2.entity.details.DetailsFromNet
+package com.bartex.joblesson2.entity.details
 
 sealed class DetailsSealed {
     data class Success(val details: DetailsFromNet): DetailsSealed()

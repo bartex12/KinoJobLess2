@@ -1,4 +1,4 @@
-package com.bartex.joblesson2.fragments.films
+package com.bartex.joblesson2.api
 
 import com.bartex.joblesson2.entity.Constants
 import com.bartex.joblesson2.entity.details.DetailsFromNet
@@ -10,7 +10,7 @@ import retrofit2.Retrofit
 import retrofit2.adapter.rxjava3.RxJava3CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 
-class DataSourceRetrofit :IDataSource{
+class DataSourceRetrofit : IDataSource {
 
     private val API: ApiService
 

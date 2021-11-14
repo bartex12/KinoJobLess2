@@ -1,10 +1,11 @@
-package com.bartex.joblesson2.fragments.films
+package com.bartex.joblesson2.helper
 
-import android.preference.PreferenceManager
+
+import androidx.preference.PreferenceManager
 import com.bartex.joblesson2.App
 import com.bartex.joblesson2.entity.Constants
 
-class PreferenceHelper(val app: App):IPreferenceHelper {
+class PreferenceHelper(val app: App): IPreferenceHelper {
 
     override fun savePosition(position: Int) {
         PreferenceManager.getDefaultSharedPreferences(app)

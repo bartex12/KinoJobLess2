@@ -1,7 +1,6 @@
 package com.bartex.joblesson2.entity.films
 
 import android.os.Parcelable
-import com.bartex.joblesson2.entity.films.Films
 import com.google.gson.annotations.Expose
 import kotlinx.android.parcel.Parcelize
 

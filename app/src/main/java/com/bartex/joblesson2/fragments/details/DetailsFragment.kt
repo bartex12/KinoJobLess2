@@ -1,8 +1,6 @@
 package com.bartex.joblesson2.fragments.details
 
 import android.os.Bundle
-import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,17 +8,15 @@ import android.widget.ImageView
 import android.widget.ProgressBar
 import android.widget.TextView
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.bartex.joblesson2.R
 import com.bartex.joblesson2.entity.Constants
 import com.bartex.joblesson2.entity.details.DetailsFromNet
-import com.bartex.joblesson2.entity.films.Films
+import com.bartex.joblesson2.entity.details.DetailsSealed
 import com.squareup.picasso.Picasso
 
-/**
- * A simple [Fragment] subclass as the second destination in the navigation.
- */
 class DetailsFragment : Fragment() {
 
     private var filmId:Int? = 550
@@ -40,7 +36,6 @@ class DetailsFragment : Fragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         filmId = arguments?.getInt(Constants.FILM_ID, 550)
-        Log.d(TAG, "DetailsFragment onCreate filmId =  $filmId")
     }
 
     override fun onCreateView(
@@ -54,16 +49,11 @@ class DetailsFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         initViews(view)
-
-        filmId?. let{
-            viewModelDetails. loadDetailSealed(it)
-        }
-
-            viewModelDetails. getDetailsSealed()
-                    .observe(viewLifecycleOwner, Observer { details->
-                        renderDataSealed(details)
-                    })
-
+        filmId?. let{viewModelDetails. loadDetailSealed(it) }
+        viewModelDetails. getDetailsSealed()
+                .observe(viewLifecycleOwner, Observer { details->
+                    renderDataSealed(details)
+                })
     }
 
     private fun initViews(view: View) {
@@ -136,7 +126,4 @@ class DetailsFragment : Fragment() {
                 .into(ivPosterDetail)
     }
 
-    companion object{
-        const val TAG = "33333"
-    }
 }

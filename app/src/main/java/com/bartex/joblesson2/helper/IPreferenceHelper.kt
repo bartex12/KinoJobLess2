@@ -1,4 +1,4 @@
-package com.bartex.joblesson2.fragments.films
+package com.bartex.joblesson2.helper
 
 interface IPreferenceHelper {
     fun savePosition(position:Int)
