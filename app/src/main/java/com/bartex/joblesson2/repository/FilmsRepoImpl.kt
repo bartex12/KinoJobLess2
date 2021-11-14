@@ -8,17 +8,17 @@ import io.reactivex.rxjava3.schedulers.Schedulers
 
 class FilmsRepoImpl(val dataSource: IDataSource): IFilmsRepo {
 
-    override fun loadFilmsTopRatedRu(apiKey: String?,language: String, page: Int ): Single<FilmsFromNet> {
-        return dataSource.loadFilmsTopRatedRu(apiKey, language, page)
+    override fun loadFilmsTopRatedRu(page: Int ): Single<FilmsFromNet> {
+        return dataSource.loadFilmsTopRatedRu(page = page)
             .subscribeOn(Schedulers.io())
     }
 
-    override fun loadFilmsPopularRu(apiKey: String?,language: String,page: Int): Single<FilmsFromNet> {
-        return dataSource.loadFilmsPopularRu(apiKey, language, page)
+    override fun loadFilmsPopularRu(page: Int): Single<FilmsFromNet> {
+        return dataSource.loadFilmsPopularRu(page)
     }
 
-    override fun loadFilmsDetailsRu(filmId: Int, apiKey: String?, language: String): Single<DetailsFromNet> {
-        return dataSource.loadFilmsDetailsRu(filmId, apiKey, language )
+    override fun loadFilmsDetailsRu(filmId: Int): Single<DetailsFromNet> {
+        return dataSource.loadFilmsDetailsRu(id = filmId)
     }
 
 }

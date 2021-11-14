@@ -21,4 +21,6 @@
     <string name="pageLoading">"Cтраница %s из %s "</string>
     <string name="buttonLoadBefore">Ближе</string>
     <string name="buttonLoadBack">В начало</string>
+    <string name="actors_name">Имя актёра</string>
+    <string name="actors_character_">Персонаж</string>
 </resources>

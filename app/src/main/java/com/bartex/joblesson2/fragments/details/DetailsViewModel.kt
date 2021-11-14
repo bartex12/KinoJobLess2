@@ -22,7 +22,7 @@ class DetailsViewModel(
 
      fun loadDetailSealed(id: Int) {
         details.value = DetailsSealed.Loading(0)
-        filmsRepo.loadFilmsDetailsRu( filmId = id , apiKey = Constants.api_key,language ="ru-RU")
+        filmsRepo.loadFilmsDetailsRu( filmId = id)
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(
                         {listFilms->

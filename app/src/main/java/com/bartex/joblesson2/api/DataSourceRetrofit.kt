@@ -17,16 +17,16 @@ class DataSourceRetrofit : IDataSource {
     init {
         API = getDataSource()
     }
-    override fun loadFilmsTopRatedRu(apiKey: String?,language: String, page: Int ): Single<FilmsFromNet> {
-        return  API.getFilmsTopRatedRu(apiKey, language, page)
+    override fun loadFilmsTopRatedRu(page: Int ): Single<FilmsFromNet> {
+        return  API.getFilmsTopRatedRu(page = page)
     }
 
-    override fun loadFilmsPopularRu(apiKey: String?,language: String,page: Int): Single<FilmsFromNet> {
-        return  API.getFilmsPopularRu(apiKey, language, page)
+    override fun loadFilmsPopularRu(page: Int): Single<FilmsFromNet> {
+        return  API.getFilmsPopularRu(page = page)
     }
 
-    override fun loadFilmsDetailsRu(id:Int, apiKey: String?, language: String): Single<DetailsFromNet> {
-        return  API.getFilmsDetailsRu(id, apiKey, language)
+    override fun loadFilmsDetailsRu(id:Int): Single<DetailsFromNet> {
+        return  API.getFilmsDetailsRu(movieId = id)
     }
 
     private fun getDataSource(): ApiService {

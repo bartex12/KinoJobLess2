@@ -9,6 +9,7 @@ object Constants {
     const val LANG_RU = "ru-RU"
     const val FIRST_POSITION_STATE = "FIRST_POSITION_STATE"
     const val PAGE_POSITION_STATE = "PAGE_POSITION_STATE"
+    const val APPEND_TO_RESPONSE_CREDITS = "credits"
 
 
 

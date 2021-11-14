@@ -26,7 +26,7 @@ class FilmsViewModel(
 
      fun loadFilmsSealed(page:Int) {
         listOfFilms.value = FilmSealed.Loading(0)
-        filmsRepo.loadFilmsPopularRu( apiKey = Constants.api_key,language =Constants.LANG_RU,page = page)
+        filmsRepo.loadFilmsPopularRu( page = page)
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe(
                 {listFilms->
