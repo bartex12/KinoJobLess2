@@ -1,4 +1,4 @@
-package com.bartex.joblesson2.fragments.details
+   package com.bartex.joblesson2.fragments.details
 
 import android.annotation.SuppressLint
 import android.os.Bundle
